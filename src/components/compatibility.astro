@@ -3,87 +3,69 @@ import CompatibilityList from "~/components/compatibility-list.astro";
 import ContentSection from "~/components/content-section.astro";
 import type { CompatibilityItem } from "~/types";
 
-const frameworks: Array<CompatibilityItem> = [
+// List 1: Key Benefits
+const keyBenefits: Array<CompatibilityItem> = [
   {
-    title: "React",
-    icon: "frameworks/react",
-    url: "https://reactjs.org/",
-  },
-  {
-    title: "Preact",
-    icon: "frameworks/preact",
-    url: "https://preactjs.com/",
-  },
-  {
-    title: "Svelte",
-    icon: "frameworks/svelte",
-    url: "https://svelte.dev/",
-  },
-  {
-    title: "Vue",
-    icon: "frameworks/vue",
-    url: "https://vuejs.org/",
-  },
-  {
-    title: "Solid",
-    icon: "frameworks/solid",
-    url: "https://www.solidjs.com/",
-  },
-  {
-    title: "Lit",
+    title: "Tailored Software Solutions",
     icon: "frameworks/lit",
-    url: "https://lit.dev/",
+    url: "#tailored-solutions",
+  },
+  {
+    title: "High-Converting Landing Pages",
+    icon: "frameworks/lit",
+    url: "#landing-pages",
+  },
+  {
+    title: "SEO-Optimized Designs",
+    icon: "frameworks/lit",
+    url: "#seo-optimized",
+  },
+  {
+    title: "Expert Team & Support",
+    icon: "frameworks/lit",
+    url: "#expert-team",
   },
 ];
 
-const platforms: Array<CompatibilityItem> = [
+// List 2: Our Approach
+const ourApproach: Array<CompatibilityItem> = [
   {
-    title: "Netlify",
-    icon: "platforms/netlify",
-    url: "https://www.netlify.com/",
+    title: "Strategic Planning",
+    icon: "frameworks/lit",
+    url: "#strategy",
   },
   {
-    title: "Vercel",
-    icon: "platforms/vercel",
-    url: "https://vercel.com/",
+    title: "Innovative Design",
+    icon: "frameworks/lit",
+    url: "#design",
   },
   {
-    title: "Cloudflare",
-    icon: "fa-brands:cloudflare",
-    url: "https://pages.cloudflare.com/",
+    title: "Robust Development",
+    icon: "frameworks/lit",
+    url: "#development",
   },
   {
-    title: "Render",
-    icon: "platforms/render",
-    url: "https://render.com/",
-  },
-  {
-    title: "GitHub",
-    icon: "fa-brands:github",
-    url: "https://pages.github.com/",
-  },
-  {
-    title: "GitLab",
-    icon: "fa-brands:gitlab",
-    url: "https://docs.gitlab.com/ee/user/project/pages/",
+    title: "Continuous Optimization",
+    icon: "frameworks/lit",
+    url: "#optimization",
   },
 ];
 ---
 
-<ContentSection title="Compatibility" id="compatibility">
+<ContentSection title="Hontech for Custom Software Development and Landing Page Design" id="benefits">
   <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>.
+    At Hontech, <span class="text-primary">we specialize in delivering</span> custom software <span class="text-primary">solutions</span> and landing page designs <span class="text-primary">to meet your business needs</span>.
   </Fragment>
+  
   <CompatibilityList
-    items={frameworks}
-    title="Frameworks"
-    url="https://docs.astro.build/core-concepts/framework-components/"
+    items={keyBenefits}
+    title="Key Benefits"
+    url="#key-benefits"
   />
+  
   <CompatibilityList
-    items={platforms}
-    title="Platforms"
-    url="https://docs.astro.build/guides/deploy/"
+    items={ourApproach}
+    title="Our Approach"
+    url="#our-approach"
   />
 </ContentSection>

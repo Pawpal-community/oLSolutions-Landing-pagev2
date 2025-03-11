@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
-import astronautImage from "~/assets/astronaut.png";
+import brandStarship from "~/assets/brand-starship.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
@@ -20,7 +19,6 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     <h2
       class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
-      <Icon name="logomark" class="size-20 text-white md:size-32" />
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-7xl"
       >
@@ -41,7 +39,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     >
       <Image
         class="h-full w-full object-cover"
-        src={astronautImage}
+        src={brandStarship}
         widths={widths}
         sizes={sizes}
         loading="eager"
@@ -66,7 +64,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     }
 
     100% {
-      transform: translate3d(0, 30px, 0);
+      transform: translate3d(0, 50px, 0);
     }
   }
 
