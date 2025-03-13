@@ -4,14 +4,15 @@ import Compatibility from "~/components/compatibility.astro";
 import Features from "~/components/features.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
+import Intro from "~/components/intro.astro";
 import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site); 
+const image = new URL("social.jpg", site);
 const description =
-  "Hontech: Custom software and SaaS solutions for businesses in Honduras and the U.S. Fast, reliable, and tailored to your needs.";
+  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
 ---
 
 <!doctype html>
@@ -22,44 +23,39 @@ const description =
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={generator} />
 
-    <!-- SEO: Title with keywords -->
-    <title>Hontech - Custom Software Development in Honduras & USA</title>
+    <title>Hontech</title>
     <meta name="description" content={description} />
 
-    <!-- SEO: Additional meta tags -->
-    <meta name="keywords" content="custom software development, SaaS solutions, Honduras software agency, USA software services" />
-    <meta name="author" content="Luis Manzano" />
-    <meta name="robots" content="index, follow" /> <!-- Allows search engines to crawl -->
-
-    <!-- Social Media: Open Graph Tags -->
-    <meta property="og:title" content="Hontech - Software Solutions for Honduras & USA" />
+    <!-- social media -->
+    <meta property="og:title" content="Astro" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} /> <!-- Use a branded image -->
+    <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
-    <meta property="og:locale" content="en_US" /> <!-- Primary language -->
-    <meta property="og:locale:alternate" content="es_HN" /> <!-- Alternate for Honduras -->
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hontech - Software Solutions" />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
 
-    <!-- Initialize theme (unchanged) -->
+    <!-- initialize theme -->
     <script is:inline>
       const themeSaved = localStorage.getItem("theme");
+
       if (themeSaved) {
         document.documentElement.dataset.theme = themeSaved;
       } else {
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
         document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
       }
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
-        if (!localStorage.getItem("theme")) {
-          document.documentElement.dataset.theme = event.matches ? "dark" : "light";
-        }
-      });
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
     </script>
   </head>
   <body
