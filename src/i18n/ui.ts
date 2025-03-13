@@ -75,7 +75,7 @@ export const labels = {
       // Splash
       "splash.build": "Construimos",
       "splash.dream": "el sitio web",
-      "splash.website": "de tu sueño",
+      "splash.website": "de tus sueños",
       "splash.custom": "O tu software",
       "splash.software": "personalizado",
 

@@ -1,7 +1,7 @@
 {
     "title": "Infinify",
-    "image": "/src/content/showcase/_images/polinations.png",
-    "url": "https://polinations.com/",
+    "image": "/src/content/showcase/_images/infinify.png",
+    "url": "https://infinify-v1.vercel.app/",
     "featured": 1,
     "type": "fullstack"
   }
