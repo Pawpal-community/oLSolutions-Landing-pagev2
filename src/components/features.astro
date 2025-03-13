@@ -1,51 +1,55 @@
 ---
 import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
+import type { LanguageList } from "~/i18n/ui";
+import { useTranslations } from "~/i18n/utils";
 import type { FeatureItem } from "~/types";
+
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof LanguageList,
+);
+
 
 const features: Array<FeatureItem> = [
   {
-    title: "Flexible Integration",
-    description:
-      "Develop custom software and landing pages using your favorite frameworks like React, Vue, or plain HTML. Hontech ensures seamless integration with any technology stack.",
+    title: translateLabels('features.FlexibleIntegration'),
+    description: translateLabels('features.FlexibleIntegration-2'),
     icon: "mdi:handshake",
   },
   {
-    title: "Lightning-Fast Performance",
-    description:
-      "Our landing pages are built with static, optimized code to guarantee rapid load times and superior SEO performance, enhancing user experience and conversions.",
+    title: translateLabels('features.LightningFastPerformance'),
+    description: translateLabels('features.LightningFastPerformance-2'),
     icon: "mdi:feather",
   },
   {
-    title: "Efficient Resource Loading",
-    description:
-      "Hontech's solutions dynamically load interactive elements only when needed, ensuring optimal performance without compromising functionality.",
+    title: translateLabels('features.EfficientResourceLoading'),
+    description: translateLabels('features.EfficientResourceLoading-2'),
     icon: "mdi:directions-fork",
   },
   {
-    title: "Seamless Integrations",
-    description:
-      "Our services integrate effortlessly with popular tools and platforms, streamlining your workflow and boosting productivity in your custom software projects.",
+    title: translateLabels('features.SeamlessIntegrations'),
+    description: translateLabels('features.SeamlessIntegrations-2'),
     icon: "mdi:graph",
   },
   {
-    title: "SEO-Driven Design",
-    description:
-      "Every landing page is crafted with built-in SEO strategies—including optimized meta tags and structured data—to secure high rankings on search engines.",
+    title: translateLabels('features.SEODrivenDesign'),
+    description: translateLabels('features.SEODrivenDesign-2'),
     icon: "mdi:search-web",
   },
   {
-    title: "Dedicated Support & Collaboration",
-    description:
-      "At Hontech, we value our clients. Benefit from continuous support and collaborative development, ensuring your project evolves with your business needs.",
+    title: translateLabels('features.DedicatedSupportCollaboration'),
+    description: translateLabels('features.DedicatedSupportCollaboration-2'),
     icon: "mdi:account-group",
   },
 ];
 ---
 
-<ContentSection title="Features" id="features">
+<ContentSection title={translateLabels('features.ContentSection')} id="features">
   <Fragment slot="lead">
-    At Hontech, our innovative approach combines the best practices in custom software development and landing page design to deliver solutions that are fast, flexible, and SEO-optimized.
+    {translateLabels('features.Fragment')}
   </Fragment>
   <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {

@@ -1,7 +1,20 @@
 ---
 import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
+import type { LanguageList } from "~/i18n/ui";
+import { useTranslations } from "~/i18n/utils";
+
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof LanguageList,
+);
+
+
+
 
 const featuredSites = await getCollection(
   "showcase",
@@ -12,9 +25,9 @@ const orderedSites = featuredSites.sort(
 );
 ---
 
-<ContentSection title="Showcase" id="showcase">
+<ContentSection title={translateLabels('showcase.ContentSection')} id="showcase">
   <Fragment slot="lead">
-    Explore the <span class="text-primary">landing page designs</span> developed by <span class="text-primary">Hontech</span>
+    {translateLabels('showcase.Explore')} <span class="text-primary">{translateLabels('showcase.LandingPageDesigns')}</span> {translateLabels('showcase.developedBy')} <span class="text-primary">Hontech</span>
   </Fragment>
   <div class="max-w-6xl space-y-2">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -26,13 +39,13 @@ const orderedSites = featuredSites.sort(
       })}
     </div>
     <p class="text-right text-sm">
-      <a class="text-primary" href="/portfolio">
-        ...view all Landing page projects &rarr;
+      <a class="text-primary" href={getRelativeLocaleUrl(currentLang, "/portfolio")}>
+        ... {translateLabels('showcase.ViewAllLandingPageProjects')} &rarr;
       </a>
     </p>
     
     <h3 class="text-center text-xl sm:text-2xl font-extrabold tracking-tight pt-8 pb-4">
-      Custom <span class="text-primary">Software</span> developed by <span class="text-primary">Hontech</span>
+      {translateLabels('showcase.Custom')} <span class="text-primary">{translateLabels('showcase.Software')}</span> {translateLabels('showcase.developedBy')} <span class="text-primary"> Hontech </span>
     </h3>
     
     <div class="grid grid-cols-1 max-w-[700px] mx-auto">
