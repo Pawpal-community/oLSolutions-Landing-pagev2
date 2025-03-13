@@ -2,5 +2,6 @@
   "title": "Designcember",
   "image": "/src/content/showcase/_images/designcember.png",
   "url": "https://designcember.com/",
-  "featured": 4
+  "featured": 4,
+  "type": "landingpage"
 }

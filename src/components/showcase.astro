@@ -14,18 +14,34 @@ const orderedSites = featuredSites.sort(
 
 <ContentSection title="Showcase" id="showcase">
   <Fragment slot="lead">
-    Astro is <span class="text-primary">versatile</span>.{" "}
-    <span class="text-primary">Explore</span> what's possible and get{" "}
-    <span class="text-primary">inspired</span>.
+    Explore the <span class="text-primary">landing page designs</span> developed by <span class="text-primary">Hontech</span>
   </Fragment>
   <div class="max-w-6xl space-y-2">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {orderedSites.map((site) => <ShowcaseCard site={site} />)}
+      {orderedSites.map((site) => {
+        if (site.data.type === "landingpage") {
+          return <ShowcaseCard site={site} />;
+        }
+        return null;
+      })}
     </div>
     <p class="text-right text-sm">
-      <a class="text-primary" href="https://astro.build/showcase/">
-        ...and more &rarr;
+      <a class="text-primary" href="/portfolio">
+        ...view all Landing page projects &rarr;
       </a>
     </p>
+    
+    <h3 class="text-center text-xl sm:text-2xl font-extrabold tracking-tight pt-8 pb-4">
+      Custom <span class="text-primary">Software</span> developed by <span class="text-primary">Hontech</span>
+    </h3>
+    
+    <div class="grid grid-cols-1 max-w-[700px] mx-auto">
+      {orderedSites.map((site) => {
+        if (site.data.type === "fullstack") {
+          return <ShowcaseCard site={site} />;
+        }
+        return null;
+      })}
+    </div>
   </div>
 </ContentSection>
