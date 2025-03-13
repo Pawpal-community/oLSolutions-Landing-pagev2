@@ -1,27 +1,38 @@
 ---
 import CompatibilityList from "~/components/compatibility-list.astro";
 import ContentSection from "~/components/content-section.astro";
+import type { LanguageList } from "~/i18n/ui";
+import { useTranslations } from "~/i18n/utils";
 import type { CompatibilityItem } from "~/types";
+
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof LanguageList,
+);
+
+
 
 // List 1: Key Benefits
 const keyBenefits: Array<CompatibilityItem> = [
   {
-    title: "Tailored Software Solutions",
+    title: translateLabels('compatibility.tailoredSoftwareSolutions'),
     icon: "frameworks/lit",
     url: '#benefits'
   },
   {
-    title: "Ultra-Fast Landing Pages",
+    title: translateLabels('compatibility.ultraFastLandingPages'),
     icon: "frameworks/lit",
     url: '#benefits'
   },
   {
-    title: "SEO-Optimized Designs",
+    title: translateLabels('compatibility.seoOptimizedDesigns'),
     icon: "frameworks/lit",
     url: '#benefits'
   },
   {
-    title: "Expert Team & Support",
+    title: translateLabels('compatibility.expertTeamAndSupport'),
     icon: "frameworks/lit",
     url: '#benefits'
   },
@@ -30,42 +41,42 @@ const keyBenefits: Array<CompatibilityItem> = [
 // List 2: Our Approach
 const ourApproach: Array<CompatibilityItem> = [
   {
-    title: "Strategic Planning",
+    title: translateLabels('compatibility.strategyPlanning'),
     icon: "frameworks/lit",
     url: '#benefits'
   },
   {
-    title: "Innovative Design",
+    title: translateLabels('compatibility.innovativeDesign'),
     icon: "frameworks/lit",
     url: '#benefits'
   },
   {
-    title: "Robust Development",
+    title: translateLabels('compatibility.robustDevelopment'),
     icon: "frameworks/lit",
     url: '#benefits'
   },
   {
-    title: "Continuous Optimization",
+    title: translateLabels('compatibility.continuousOptimization'),
     icon: "frameworks/lit",
     url: '#benefits'
   },
 ];
 ---
 
-<ContentSection title="Why Hontech for Custom Software Development and Landing Page Design?" id="benefits">
+<ContentSection title={translateLabels('compatibility.ContentSection')} id="benefits">
   <Fragment slot="lead">
-    At Hontech, <span class="text-primary">we specialize in delivering</span> custom software <span class="text-primary">solutions</span> and landing page designs <span class="text-primary">to meet your business needs</span>.
+    {translateLabels('compatibility.at-hontech')} <span class="text-primary"> {translateLabels('compatibility.specialize')} </span> {translateLabels('compatibility.solutions')} <span class="text-primary"> {translateLabels('compatibility.solutions-2')} </span> {translateLabels('compatibility.landing-page')} {translateLabels('compatibility.to-meet')}
   </Fragment>
   
   <CompatibilityList
     items={keyBenefits}
-    title="Key Benefits"
+    title={translateLabels('compatibility.keyBenefits')}
     url="#key-benefits"
   />
   
   <CompatibilityList
     items={ourApproach}
-    title="Our Approach"
+    title={translateLabels('compatibility.ourApproach')}
     url="#our-approach"
   />
 </ContentSection>

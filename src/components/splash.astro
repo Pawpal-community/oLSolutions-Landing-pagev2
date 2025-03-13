@@ -4,9 +4,18 @@ import brandStarship from "~/assets/brand-starship.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
-
+import { useTranslations } from "~/i18n/utils";
+import type { LanguageList } from "~/i18n/ui";
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
+
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof LanguageList,
+);
+
 ---
 
 <section class="relative h-full bg-black">
@@ -22,15 +31,15 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-7xl"
       >
-        We build
-        <br /> Your dream
-        <br /> Website
+        {translateLabels('splash.build')}
+        <br /> {translateLabels('splash.dream')}
+        <br /> {translateLabels('splash.website')}
       </div>
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-7xl mt-5"
       >
-        Or Your Custom
-        <br /> software
+       {translateLabels('splash.custom')}
+        <br /> {translateLabels('splash.software')}
       </div>
     </h2>
     <div

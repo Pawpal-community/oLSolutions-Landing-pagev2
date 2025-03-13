@@ -1,12 +1,40 @@
 ---
 import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
+import { LanguageList } from "~/i18n/ui";
+import { useTranslations } from "~/i18n/utils";
 import type { NavItem } from "~/types";
 
+const currentLang = Astro.currentLocale || "en";
+const currentPath = Astro.url.pathname;
+
+
+function getLocalizedPath(targetLang: string) {
+  if (currentPath === '/' || currentPath === '') {
+    return targetLang === 'en' ? '/' : `/${targetLang}`;
+  }
+  
+  
+  if (currentPath.startsWith('/en/') || currentPath.startsWith('/es/')) {
+    const pathWithoutLang = currentPath.substring(3);
+    return targetLang === 'en' ? `/en${pathWithoutLang}` : `/es${pathWithoutLang}`;
+  } else if (currentPath.startsWith('/es') || currentPath.startsWith('/en')) {
+    const pathWithoutLang = currentPath.substring(3);
+    return targetLang === 'en' ? `/en${pathWithoutLang}` : `/es${pathWithoutLang}`;
+  }
+  
+  
+  return targetLang === 'en' ? `/en${currentPath}` : `/es${currentPath}`;
+}
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof LanguageList,
+);
+
 const navItems: Array<NavItem> = [
-  { title: "Services", url: "#features" },
-  { title: "Clients", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: translateLabels('nav.services'), url: "#features" },
+  { title: translateLabels('nav.clients'), url: "#compatibility" },
+  { title: translateLabels('nav.showcase'), url: "#showcase" },
 ];
 ---
 
@@ -34,6 +62,72 @@ const navItems: Array<NavItem> = [
           }
         </ul>
       </nav>
+      
+      <!-- Selector de idioma con banderas -->
+      <div class="language-selector relative">
+        <button 
+          id="language-toggle" 
+          class="flex items-center space-x-1 bg-transparent border border-white/20 rounded px-2 py-1 text-sm text-black dark:text-white"
+          aria-label="Change language"
+        >
+          <!-- Bandera del idioma actual -->
+          {currentLang === 'en' ? (
+            <svg class="w-5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+              <clipPath id="a">
+                <path d="M0 0v30h60V0z"/>
+              </clipPath>
+              <clipPath id="b">
+                <path d="M30 15h30v15zv15H0zH0V0zV0h30z"/>
+              </clipPath>
+              <g clip-path="url(#a)">
+                <path d="M0 0v30h60V0z" fill="#012169"/>
+                <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
+                <path d="M0 0l60 30m0-30L0 30" clip-path="url(#b)" stroke="#C8102E" stroke-width="4"/>
+                <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+                <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+              </g>
+            </svg>
+          ) : (
+            <svg class="w-5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500">
+              <rect width="750" height="500" fill="#c60b1e"/>
+              <rect width="750" height="250" fill="#ffc400" y="125"/>
+            </svg>
+          )}
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        
+        <!-- Menú desplegable -->
+        <div id="language-dropdown" class="absolute mt-1 right-0 w-20 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-lg hidden z-10">
+          <a href={currentLang === 'en' ? currentPath : getLocalizedPath('en')} class="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+            <svg class="w-5 h-3.5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+              <clipPath id="a2">
+                <path d="M0 0v30h60V0z"/>
+              </clipPath>
+              <clipPath id="b2">
+                <path d="M30 15h30v15zv15H0zH0V0zV0h30z"/>
+              </clipPath>
+              <g clip-path="url(#a2)">
+                <path d="M0 0v30h60V0z" fill="#012169"/>
+                <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
+                <path d="M0 0l60 30m0-30L0 30" clip-path="url(#b2)" stroke="#C8102E" stroke-width="4"/>
+                <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+                <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+              </g>
+            </svg>
+            <span class="text-sm">EN</span>
+          </a>
+          <a href={currentLang === 'es' ? currentPath : getLocalizedPath('es')} class="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+            <svg class="w-5 h-3.5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500">
+              <rect width="750" height="500" fill="#c60b1e"/>
+              <rect width="750" height="250" fill="#ffc400" y="125"/>
+            </svg>
+            <span class="text-sm">ES</span>
+          </a>
+        </div>
+      </div>
+      
       <button
         id="open-nav-button"
         type="button"
@@ -73,6 +167,78 @@ const navItems: Array<NavItem> = [
               }
             </ul>
           </nav>
+          
+          <!-- Selector de idioma para móvil con banderas -->
+          <div class="flex justify-center py-4">
+            <div class="language-selector-mobile relative">
+              <button 
+                id="mobile-language-toggle" 
+                class="flex items-center space-x-2 bg-transparent border border-current rounded px-3 py-2"
+                aria-label="Change language"
+              >
+                {currentLang === 'en' ? (
+                  <>
+                    <svg class="w-6 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+                      <clipPath id="a3">
+                        <path d="M0 0v30h60V0z"/>
+                      </clipPath>
+                      <clipPath id="b3">
+                        <path d="M30 15h30v15zv15H0zH0V0zV0h30z"/>
+                      </clipPath>
+                      <g clip-path="url(#a3)">
+                        <path d="M0 0v30h60V0z" fill="#012169"/>
+                        <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
+                        <path d="M0 0l60 30m0-30L0 30" clip-path="url(#b3)" stroke="#C8102E" stroke-width="4"/>
+                        <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+                        <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+                      </g>
+                    </svg>
+                    <span>English</span>
+                  </>
+                ) : (
+                  <>
+                    <svg class="w-6 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500">
+                      <rect width="750" height="500" fill="#c60b1e"/>
+                      <rect width="750" height="250" fill="#ffc400" y="125"/>
+                    </svg>
+                    <span>Español</span>
+                  </>
+                )}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              
+              <!-- Menú desplegable móvil -->
+              <div id="mobile-language-dropdown" class="absolute mt-1 left-0 w-32 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-lg hidden z-10">
+                <a href={currentLang === 'en' ? currentPath : getLocalizedPath('en')} class="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <svg class="w-5 h-3.5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+                    <clipPath id="a4">
+                      <path d="M0 0v30h60V0z"/>
+                    </clipPath>
+                    <clipPath id="b4">
+                      <path d="M30 15h30v15zv15H0zH0V0zV0h30z"/>
+                    </clipPath>
+                    <g clip-path="url(#a4)">
+                      <path d="M0 0v30h60V0z" fill="#012169"/>
+                      <path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/>
+                      <path d="M0 0l60 30m0-30L0 30" clip-path="url(#b4)" stroke="#C8102E" stroke-width="4"/>
+                      <path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/>
+                      <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+                    </g>
+                  </svg>
+                  <span>English</span>
+                </a>
+                <a href={currentLang === 'es' ? currentPath : getLocalizedPath('es')} class="flex items-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <svg class="w-5 h-3.5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500">
+                    <rect width="750" height="500" fill="#c60b1e"/>
+                    <rect width="750" height="250" fill="#ffc400" y="125"/>
+                  </svg>
+                  <span>Español</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -90,11 +256,46 @@ const navItems: Array<NavItem> = [
   const menu = document.querySelector(`#${menuModalId} ul`);
   const openNavButton = document.querySelector("#open-nav-button");
   const closeNavButton = document.querySelector("#close-nav-button");
+  
+  // Elementos del selector de idioma
+  const languageToggle = document.querySelector("#language-toggle");
+  const languageDropdown = document.querySelector("#language-dropdown");
+  const mobileLanguageToggle = document.querySelector("#mobile-language-toggle");
+  const mobileLanguageDropdown = document.querySelector("#mobile-language-dropdown");
 
   invariant(header, "header should not be null");
   invariant(menu, "menu should not be null");
   invariant(openNavButton, "openNavButton should not be null");
   invariant(closeNavButton, "closeNavButton should not be null");
+  invariant(languageToggle, "languageToggle should not be null");
+  invariant(languageDropdown, "languageDropdown should not be null");
+  invariant(mobileLanguageToggle, "mobileLanguageToggle should not be null");
+  invariant(mobileLanguageDropdown, "mobileLanguageDropdown should not be null");
+
+ 
+  languageToggle.addEventListener("click", () => {
+    languageDropdown.classList.toggle("hidden");
+  });
+  
+  mobileLanguageToggle.addEventListener("click", () => {
+    mobileLanguageDropdown.classList.toggle("hidden");
+  });
+  
+  document.addEventListener("click", (e) => {
+    if (
+      !languageToggle.contains(e.target as Node) && 
+      !languageDropdown.contains(e.target as Node)
+    ) {
+      languageDropdown.classList.add("hidden");
+    }
+    
+    if (
+      !mobileLanguageToggle.contains(e.target as Node) && 
+      !mobileLanguageDropdown.contains(e.target as Node)
+    ) {
+      mobileLanguageDropdown.classList.add("hidden");
+    }
+  });
 
   const openMenu = () => {
     MicroModal.show(menuModalId, { disableScroll: true });

@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
+import type { LanguageList } from "~/i18n/ui";
+import { useTranslations } from "~/i18n/utils";
 import type { CompatibilityItem } from "~/types";
 
 export interface Props {
@@ -7,6 +9,13 @@ export interface Props {
   title: string;
   url: string;
 }
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof LanguageList,
+);
+
 
 const { items, title, url } = Astro.props;
 ---
@@ -32,6 +41,6 @@ const { items, title, url } = Astro.props;
     </ul>
   </div>
   <p class="text-right text-sm">
-    <a class="text-primary" href={url}> ...and more &rarr;</a>
+    <a class="text-primary" href={url}> ... {translateLabels('compatibility.more')} &rarr;</a>
   </p>
 </div>
