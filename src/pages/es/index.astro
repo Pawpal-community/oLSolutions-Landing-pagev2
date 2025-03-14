@@ -4,15 +4,12 @@ import Compatibility from "~/components/compatibility.astro";
 import Features from "~/components/features.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
-import Intro from "~/components/intro.astro";
 import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
-const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
 ---
 
 <!doctype html>
@@ -26,6 +23,8 @@ const description =
   <!-- SEO: Title and Description -->
   <title>Hontech - Desarrollo de Software a Medida en Honduras</title>
   <meta name="description" content="Soluciones de software personalizadas y SaaS para empresas en Honduras y Centroamérica." />
+  <link rel="alternate" hreflang="en-US" href="https://hon-tech.netlify.app/en/" />
+<link rel="alternate" hreflang="es-HN" href="https://hon-tech.netlify.app/es/" />
 
   <!-- SEO: Keywords -->
   <meta name="keywords" content="desarrollo de software Honduras, software personalizado Centroamérica, soluciones SaaS Honduras" />
