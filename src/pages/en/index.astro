@@ -19,20 +19,32 @@ const description =
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="generator" content={generator} />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="generator" content={generator} />
 
-    <title>Hontech</title>
-    <meta name="description" content={description} />
+  <!-- SEO: Title and Description -->
+  <title>Hontech - Custom Software Development in USA</title>
+  <meta name="description" content="Custom software and SaaS solutions for businesses in the USA. Fast, reliable, and tailored to your needs." />
 
-    <!-- social media -->
-    <meta property="og:title" content="Astro" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
+  <!-- SEO: Keywords -->
+  <meta name="keywords" content="software development USA, custom software USA, SaaS solutions USA" />
+  <meta name="author" content="Luis Manzano" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Hontech - Software Solutions for the USA" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Custom software and SaaS solutions for businesses in the USA." />
+  <meta property="og:image" content={image} />
+  <meta property="og:url" content={site + 'en/'} />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hontech - Software Solutions for the USA" />
+  <meta name="twitter:description" content="Custom software and SaaS solutions for businesses in the USA." />
+  <meta name="twitter:image" content={image} />
 
     <!-- initialize theme -->
     <script is:inline>
