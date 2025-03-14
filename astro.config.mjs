@@ -4,13 +4,13 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-moon-landing.netlify.app/",
+  site: "https://hon-tech.netlify.app/",
   integrations: [tailwind(), icon()],
   i18n: {
     defaultLocale: "en",
     locales: ["en", "es"],
     routing: {
-      prefixDefaultLocale: false,
+      prefixDefaultLocale: true,
     }
   },
 });
