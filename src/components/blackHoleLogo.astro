@@ -1,0 +1,139 @@
+---
+// BlackHoleLogo.astro
+// A futuristic logo component for Hontech featuring a black hole 'O'
+---
+
+<div class="hontech-logo">
+    H<span class="black-hole"><div class="particles text-primary" id="blackhole-particles"></div></span>ntech
+  </div>
+  
+  <style>
+    .hontech-logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--logo-color, currentColor);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+  
+    .black-hole {
+      position: relative;
+      display: inline-block;
+      width: 1.5em;
+      height: 1em;
+      vertical-align: middle;
+    }
+  
+    .black-hole::before {
+      content: '';
+      width: 0.8em;
+      height: 0.8em;
+      background: radial-gradient(circle, #000 40%, rgba(0, 0, 0, 0.8) 70%);
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulsate 3s ease-in-out infinite;
+      box-shadow: 0 0 10px 2px rgba(100, 100, 255, 0.5),
+                  0 0 20px 4px rgba(100, 100, 255, 0.3);
+      z-index: 1;
+    }
+  
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+    }
+  
+    .particle {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      background: #fff;
+      border-radius: 50%;
+      transform-origin: center;
+      opacity: 0.8;
+    }
+  
+    @keyframes pulsate {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px 2px rgba(100, 100, 255, 0.5),
+                    0 0 20px 4px rgba(100, 100, 255, 0.3);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 15px 3px rgba(100, 100, 255, 0.6),
+                    0 0 30px 6px rgba(100, 100, 255, 0.4);
+      }
+    }
+  
+    @keyframes orbit {
+      from {
+        transform: rotate(0deg) translateX(0.5em) rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg) translateX(0.5em) rotate(-360deg);
+      }
+    }
+  
+    /* Adapt to dark/light mode */
+    :global(.dark) .black-hole::before {
+      box-shadow: 0 0 10px 2px rgba(150, 100, 255, 0.6),
+                  0 0 20px 4px rgba(150, 100, 255, 0.4);
+    }
+    
+    :global(.dark) .particle {
+      background: #f0f0ff;
+    }
+  </style>
+  
+  <script>
+    // Function to create particles that will be reused if the component is hydrated
+    function createBlackHoleParticles() {
+      const particlesContainer = document.getElementById('blackhole-particles');
+      if (!particlesContainer) return;
+      
+      // Clear existing particles first
+      particlesContainer.innerHTML = '';
+      
+      const numParticles = 12;
+      
+      for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // Randomize particle size
+        const size = Math.random() * 2 + 1;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Randomize animation duration and delay
+        const duration = 2 + Math.random() * 4;
+        particle.style.animation = `orbit ${duration}s linear infinite`;
+        particle.style.animationDelay = `${Math.random() * 2}s`;
+        
+        // Randomize initial position
+        const angle = Math.random() * 360;
+        particle.style.transform = `rotate(${angle}deg) translateX(0.5em) rotate(-${angle}deg)`;
+        
+        // Vary particle color based on position in orbit
+        const hue = 210 + Math.random() * 60; // Blue to purple range
+        const lightness = 70 + Math.random() * 30; // Bright particles
+        particle.style.background = `hsl(${hue}, 100%, ${lightness}%)`;
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+  
+    // Run on initial client-side load
+    document.addEventListener('DOMContentLoaded', createBlackHoleParticles);
+    
+    // Also run after Astro view transitions if used
+    document.addEventListener('astro:page-load', createBlackHoleParticles);
+  </script>
