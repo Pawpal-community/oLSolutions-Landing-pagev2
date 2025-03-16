@@ -10,21 +10,14 @@ const currentPath = Astro.url.pathname;
 
 
 function getLocalizedPath(targetLang: string) {
-  if (currentPath === '/' || currentPath === '') {
-    return targetLang === 'en' ? '/' : `/${targetLang}`;
+  const segments = currentPath.split('/').filter(Boolean);
+  let pagePath;
+  if (segments.length > 0 && segments[0] === 'es') {
+    pagePath = '/' + segments.slice(1).join('/');
+  } else {
+    pagePath = currentPath;
   }
-  
-  
-  if (currentPath.startsWith('/en/') || currentPath.startsWith('/es/')) {
-    const pathWithoutLang = currentPath.substring(3);
-    return targetLang === 'en' ? `/en${pathWithoutLang}` : `/es${pathWithoutLang}`;
-  } else if (currentPath.startsWith('/es') || currentPath.startsWith('/en')) {
-    const pathWithoutLang = currentPath.substring(3);
-    return targetLang === 'en' ? `/en${pathWithoutLang}` : `/es${pathWithoutLang}`;
-  }
-  
-  
-  return targetLang === 'en' ? `/en${currentPath}` : `/es${currentPath}`;
+  return targetLang === 'en' ? pagePath : `/${targetLang}${pagePath}`;
 }
 
 const translateLabels = useTranslations(
