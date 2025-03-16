@@ -8,7 +8,7 @@ import type { NavItem } from "~/types";
 const currentLang = Astro.currentLocale || "en";
 const currentPath = Astro.url.pathname;
 
-
+// path to redirect to the same page in the target language
 function getLocalizedPath(targetLang: string) {
   const segments = currentPath.split('/').filter(Boolean);
   let pagePath;
