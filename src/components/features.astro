@@ -14,11 +14,7 @@ const translateLabels = useTranslations(
 
 
 const features: Array<FeatureItem> = [
-  {
-    title: translateLabels('features.FlexibleIntegration'),
-    description: translateLabels('features.FlexibleIntegration-2'),
-    icon: "mdi:handshake",
-  },
+  // Landing Page Features
   {
     title: translateLabels('features.LightningFastPerformance'),
     description: translateLabels('features.LightningFastPerformance-2'),
@@ -30,14 +26,20 @@ const features: Array<FeatureItem> = [
     icon: "mdi:directions-fork",
   },
   {
-    title: translateLabels('features.SeamlessIntegrations'),
-    description: translateLabels('features.SeamlessIntegrations-2'),
-    icon: "mdi:graph",
-  },
-  {
     title: translateLabels('features.SEODrivenDesign'),
     description: translateLabels('features.SEODrivenDesign-2'),
     icon: "mdi:search-web",
+  },
+  // Custom Software Features
+  {
+    title: translateLabels('features.FlexibleIntegration'),
+    description: translateLabels('features.FlexibleIntegration-2'),
+    icon: "mdi:handshake",
+  },
+  {
+    title: translateLabels('features.SeamlessIntegrations'),
+    description: translateLabels('features.SeamlessIntegrations-2'),
+    icon: "mdi:graph",
   },
   {
     title: translateLabels('features.DedicatedSupportCollaboration'),
@@ -45,11 +47,13 @@ const features: Array<FeatureItem> = [
     icon: "mdi:account-group",
   },
 ];
+
 ---
 
 <ContentSection title={translateLabels('features.ContentSection')} id="features">
   <Fragment slot="lead">
     {translateLabels('features.Fragment')}
+    <span class="text-primary"> {translateLabels('features.FragmentHighlight')}</span>
   </Fragment>
   <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {
