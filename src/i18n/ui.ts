@@ -5,6 +5,11 @@ export const LanguageList = {
 
 export const labels = {
   en: {
+    //whats number
+    "number.whats": "https://wa.me/50489839821",
+    //cta buttons
+    "cta.sendMessage": "Contact us",
+    "cta.viewProjects": "View Projects",
     // Nav
     "nav.services": "Services",
     "nav.clients": "Clients",
@@ -82,6 +87,11 @@ export const labels = {
     "showcase.Featured": "Featured",
   },
   es: {
+    //whats number
+    "number.whats": "https://wa.me/50489839821",
+    //cta buttons
+    "cta.sendMessage": "Contactanos",
+    "cta.viewProjects": "Ver Proyectos",
     // Nav
     "nav.services": "Servicios",
     "nav.clients": "Clientes",
