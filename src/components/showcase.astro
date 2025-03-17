@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import { getRelativeLocaleUrl } from "astro:i18n";
 import ContentSection from "~/components/content-section.astro";
 import ShowcaseCard from "~/components/showcase-card.astro";
 import type { LanguageList } from "~/i18n/ui";
 import { useTranslations } from "~/i18n/utils";
+import SendMessageBtn from "./shared/sendMessageBtn.astro";
 
 
 const currentLang = Astro.currentLocale || "en";
@@ -48,7 +48,7 @@ const orderedSites = featuredSites.sort(
       {translateLabels('showcase.Custom')} <span class="text-primary">{translateLabels('showcase.Software')}</span> {translateLabels('showcase.developedBy')} <span class="text-primary"> Hontech </span>
     </h3>
     
-    <div class="grid grid-cols-1 max-w-[700px] mx-auto">
+    <div class="grid grid-cols-1 pb-3 max-w-[700px] mx-auto">
       {orderedSites.map((site) => {
         if (site.data.type === "fullstack") {
           return <ShowcaseCard site={site} />;
@@ -56,5 +56,6 @@ const orderedSites = featuredSites.sort(
         return null;
       })}
     </div>
+    <SendMessageBtn/>
   </div>
 </ContentSection>
