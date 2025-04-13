@@ -11,7 +11,7 @@ import "~/styles/index.css";
 const { generator, site } = Astro;
 const image = new URL("hontech-preview.png", site);
 const description =
-  "Hontech: Custom software and SaaS solutions for businesses in Honduras and the U.S. Fast, reliable, and tailored to your needs.";
+  "Design of custom websites and landing pages for businesses in the United States and across America.";
 ---
 
 <!doctype html>
@@ -23,47 +23,52 @@ const description =
     <meta name="generator" content={generator} />
 
     <!-- SEO: Title and Description -->
-    <title>Hontech - Custom Software and landing pages Development in USA</title>
+    <title>Hontech - Website and Landing Page Development in United States and America</title>
     <meta name="description" content={description} />
+    <link rel="alternate" hreflang="en-US" href="https://hon-tech.netlify.app/" />
+    <link rel="alternate" hreflang="es-HN" href="https://hon-tech.netlify.app/es/" />
 
-    <!-- SEO: Hreflang Tags -->
-    <link rel="alternate" hreflang="en" href="https://hon-tech.netlify.app/" />
-    <link rel="alternate" hreflang="es" href="https://hon-tech.netlify.app/es/" />
-
-    <!-- SEO: Additional Meta Tags -->
-    <meta name="keywords" content="custom software development, SaaS solutions, Honduras software agency, USA software services" />
+    <!-- SEO: Keywords -->
+    <meta name="keywords" content="landing page development, website design, landing pages America, website United States, landing page USA" />
     <meta name="author" content="Luis Manzano" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Social Media: Open Graph Tags -->
-    <meta property="og:title" content="Hontech - Software Solutions for Honduras & USA" />
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Hontech - Websites and Landing Pages for United States and America" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="es_HN" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hontech - Software Solutions" />
+    <meta name="twitter:title" content="Hontech - Websites and Landing Pages for United States and America" />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
-    <!-- Theme Script (unchanged) -->
+    <!-- initialize theme -->
     <script is:inline>
       const themeSaved = localStorage.getItem("theme");
+
       if (themeSaved) {
         document.documentElement.dataset.theme = themeSaved;
       } else {
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
         document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
       }
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
-        if (!localStorage.getItem("theme")) {
-          document.documentElement.dataset.theme = event.matches ? "dark" : "light";
-        }
-      });
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
     </script>
   </head>
   <body

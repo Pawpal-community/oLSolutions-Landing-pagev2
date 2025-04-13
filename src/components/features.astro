@@ -30,21 +30,10 @@ const features: Array<FeatureItem> = [
     description: translateLabels('features.SEODrivenDesign-2'),
     icon: "mdi:search-web",
   },
-  // Custom Software Features
   {
-    title: translateLabels('features.FlexibleIntegration'),
-    description: translateLabels('features.FlexibleIntegration-2'),
-    icon: "mdi:handshake",
-  },
-  {
-    title: translateLabels('features.SeamlessIntegrations'),
-    description: translateLabels('features.SeamlessIntegrations-2'),
-    icon: "mdi:graph",
-  },
-  {
-    title: translateLabels('features.DedicatedSupportCollaboration'),
-    description: translateLabels('features.DedicatedSupportCollaboration-2'),
-    icon: "mdi:account-group",
+    title: translateLabels('features.CustomDesign'),
+    description: translateLabels('features.CustomDesign-2'),
+    icon: "mdi:palette",
   },
 ];
 
@@ -55,10 +44,10 @@ const features: Array<FeatureItem> = [
     {translateLabels('features.Fragment')}
     <span class="text-primary"> {translateLabels('features.FragmentHighlight')}</span>
   </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 ">
     {
       features.map(({ title, description, icon }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6 lg:max-w-[550px]">
           <div class="size-16 rounded-full border-2 border-current p-3">
             <Icon name={icon} class="size-full" />
           </div>

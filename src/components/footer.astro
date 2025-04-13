@@ -5,22 +5,17 @@ import type { FooterLink } from "~/types";
 
 const links: Array<FooterLink> = [
   {
-    url: "https://astro.build/",
-    description: "Astro's official website",
-    icon: "mdi:home",
-  },
-  {
-    url: "https://www.instagram.com/",
+    url: "https://www.instagram.com/hontech504?utm_source=qr&igsh=MWNtZjBybXZsNWFmMQ==",
     description: "Follow us on Instagram",
     icon: "fa-brands:instagram",
   },
   {
-    url: "https://www.tiktok.com/",
+    url: "https://www.tiktok.com/@hontech504?_t=ZM-8vVMkpxWwkf&_r=1",
     description: "Follow us on TikTok",
     icon: "fa-brands:tiktok",
   },
   {
-    url: "https://www.facebook.com/",
+    url: "https://www.facebook.com/share/1BkEYURuh1/",
     description: "Follow us on Facebook",
     icon: "fa-brands:facebook",
   },
@@ -37,6 +32,7 @@ const links: Array<FooterLink> = [
       links.map((link) => (
         <li>
           <a
+          target="_blank"
             class="flex size-16 items-center justify-center rounded-full border-2 border-current p-4"
             href={link.url}
           >

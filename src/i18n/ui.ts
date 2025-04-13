@@ -13,35 +13,31 @@ export const labels = {
     // Nav
     "nav.services": "Services",
     "nav.clients": "Clients",
-    "nav.showcase": "Showcase",
+    "nav.showcase": "Projects",
 
     // Splash
-    "splash.build": "We build",
-    "splash.dream": "Your dream",
-    "splash.website": "Website",
-    "splash.custom": "Or Your Custom",
-    "splash.software": "software",
+    "splash.build": "At Hontech",
+    "splash.dream": "We Build",
+    "splash.website": "Your Website or",
+    "splash.custom": "Landing Page for",
+    "splash.software": "Your Business",
 
     // Compatibility
     "compatibility.ContentSection":
-      "Why Hontech for Custom Software Development and Landing Page Design?",
+      "Why Choose Hontech for Website Design and Landing Pages?",
     "compatibility.at-hontech": "At Hontech",
-    "compatibility.specialize": " We specialize in delivering",
-    "compatibility.solutions": " custom software",
-    "compatibility.solutions-2": " solutions",
-    "compatibility.landing-page": " landing page designs",
-    "compatibility.to-meet": " to meet your business needs",
-    "compatibility.tailoredSoftwareSolutions": "Life time hosting",
-    "compatibility.ultraFastLandingPages": "Ultra Fast Landing Pages",
-    "compatibility.seoOptimizedDesigns": "SEO Optimized Designs",
-    "compatibility.expertTeamAndSupport": "Expert Team & Support",
-    "compatibility.strategyPlanning": "Strategic Planning",
-    "compatibility.innovativeDesign": "Robust Development",
-    "compatibility.robustDevelopment": "Based on your busisness needs",
-    "compatibility.continuousOptimization":
-      "Continuous Optimization for your business",
-    "compatibility.keyBenefits": "For your landing pages",
-    "compatibility.ourApproach": "For your custom software",
+    "compatibility.specialize": " we specialize in",
+    "compatibility.solutions": " website design and",
+    "compatibility.solutions-2": " landing pages",
+    "compatibility.landing-page": " for your business",
+    "compatibility.to-meet": " and its needs",
+    "compatibility.tailoredSoftwareSolutions": "No Monthly Fees: Lifetime Hosting Included",
+    "compatibility.ultraFastLandingPages": "Lightning-Fast Loading: More Sales, Less Bounce Rate",
+    "compatibility.seoOptimizedDesigns": "Designed to Rank on Google",
+    "compatibility.expertTeamAndSupport": "Expert Support, Even After Launch",
+    "compatibility.innovativeDesign": "Unique Design That Reflects Your Business",
+    "compatibility.keyBenefits": "Key Benefits",
+    "compatibility.ourApproach": "How We Work With You",
     "compatibility.more": "and more",
 
     // Features
@@ -64,24 +60,28 @@ export const labels = {
       "Hontech is more than just a service provider—we're your technology partner. Enjoy continuous support, real-time collaboration, and a development process tailored to your evolving business needs.",
 
     // Landing Page Features
-    "features.LightningFastPerformance": "Lightning-Fast Performance",
+    "features.LightningFastPerformance": "Ultra-Fast Websites",
     "features.LightningFastPerformance-2":
-      "Our landing pages are built with optimized static code and minimal dependencies, ensuring ultra-fast load times that improve user experience and increase conversions.",
+      "We develop landing pages and websites across the United States and America that load in seconds. We use the latest technologies to ensure your website is blazing fast, improving visitor experience and increasing your business conversions.",
 
-    "features.EfficientResourceLoading": "Efficient Resource Loading",
+    "features.EfficientResourceLoading": "Professional Optimization",
     "features.EfficientResourceLoading-2":
-      "Hontech’s landing pages intelligently load only the necessary assets, reducing unnecessary requests and enhancing speed without sacrificing functionality.",
+      "Our website design service includes advanced optimization to make your landing page perform efficiently across the United States and America. This means lower hosting costs and a better experience for your customers.",
 
-    "features.SEODrivenDesign": "SEO-Driven Design",
+    "features.SEODrivenDesign": "Google-Optimized Design",
     "features.SEODrivenDesign-2":
-      "Every landing page we build follows best SEO practices, from structured metadata to mobile-friendly layouts, ensuring maximum visibility on search engines.",
+      "We create landing pages that stand out in Google searches across the United States and America. Our web design follows SEO best practices, ensuring your business is visible to potential customers searching for your services online.",
+
+    "features.CustomDesign": "Custom Web Design",
+    "features.CustomDesign-2":
+      "We design unique websites across the United States and America that reflect your brand identity. We use the latest web design trends to make your business stand out from the competition.",
 
     //showcase
-    "showcase.ContentSection": "Showcase",
-    "showcase.Explore": "Explore the ",
-    "showcase.LandingPageDesigns": " Landing page designs",
+    "showcase.ContentSection": "Projects",
+    "showcase.Explore": "Explore our",
+    "showcase.LandingPageDesigns": " website designs",
     "showcase.developedBy": " developed by ",
-    "showcase.ViewAllLandingPageProjects": "view all Landing page projects",
+    "showcase.ViewAllLandingPageProjects": "view all website projects",
     "showcase.Custom": "Custom",
     "showcase.Software": "Software",
     "showcase.Featured": "Featured",
@@ -114,12 +114,12 @@ export const labels = {
     "compatibility.landing-page": "para tu negocio",
     "compatibility.to-meet": "y sus necesidades",
     "compatibility.tailoredSoftwareSolutions": "Sin pagos mensuales: hosting de por vida incluido",
-  "compatibility.ultraFastLandingPages": "Tu web carga en segundos: más ventas, menos rebote",
-  "compatibility.seoOptimizedDesigns": "Diseño pensado para aparecer en Google",
-  "compatibility.expertTeamAndSupport": "Acompañamiento experto, incluso después de publicar",
-  "compatibility.innovativeDesign": "Diseño único que refleja tu negocio",
-  "compatibility.keyBenefits": "Beneficios clave",
-  "compatibility.ourApproach": "Cómo trabajamos contigo",
+    "compatibility.ultraFastLandingPages": "Tu web carga en segundos: más ventas, menos rebote",
+    "compatibility.seoOptimizedDesigns": "Diseño pensado para aparecer en Google",
+    "compatibility.expertTeamAndSupport": "Acompañamiento experto, incluso después de publicar",
+    "compatibility.innovativeDesign": "Diseño único que refleja tu negocio",
+    "compatibility.keyBenefits": "Beneficios clave",
+    "compatibility.ourApproach": "Cómo trabajamos contigo",
     "compatibility.more": "y más",
 
     // Features
@@ -141,17 +141,21 @@ export const labels = {
       "Hontech es más que un proveedor de servicios, somos tu socio tecnológico. Disfruta de soporte continuo, colaboración en tiempo real y un proceso de desarrollo adaptado a la evolución de tu negocio.",
 
     // Características de Landing Pages
-    "features.LightningFastPerformance": "Rendimiento Ultrarrápido",
+    "features.LightningFastPerformance": "Sitios Web Ultra Rápidos",
     "features.LightningFastPerformance-2":
-      "Nuestras landing pages están construidas con código estático optimizado y dependencias mínimas, garantizando tiempos de carga ultrarrápidos que mejoran la experiencia del usuario y aumentan las conversiones.",
+      "Desarrollamos landing pages y sitios web en Honduras y Centroamérica que cargan en segundos. Utilizamos las últimas tecnologías para garantizar que tu página web sea veloz, lo que mejora la experiencia de tus visitantes y aumenta las conversiones de tu negocio.",
 
-    "features.EfficientResourceLoading": "Carga Eficiente de Recursos",
+    "features.EfficientResourceLoading": "Optimización Profesional",
     "features.EfficientResourceLoading-2":
-      "Las landing pages de Hontech cargan de manera inteligente solo los recursos necesarios, reduciendo solicitudes innecesarias y mejorando la velocidad sin sacrificar funcionalidad.",
+      "Nuestro servicio de diseño de sitios web incluye optimización avanzada para que tu landing page en Honduras y Centroamérica funcione de manera eficiente. Esto significa menos costos de hosting y una mejor experiencia para tus clientes.",
 
-    "features.SEODrivenDesign": "Diseño Optimizado para SEO",
+    "features.SEODrivenDesign": "Diseño Optimizado para Google",
     "features.SEODrivenDesign-2":
-      "Cada landing page que creamos sigue las mejores prácticas de SEO, desde metadatos estructurados hasta diseños optimizados para dispositivos móviles, asegurando la máxima visibilidad en los motores de búsqueda.",
+      "Creamos landing pages en Honduras y Centroamérica que destacan en Google. Nuestro diseño web sigue las mejores prácticas de SEO, asegurando que tu negocio sea visible para clientes potenciales que buscan tus servicios en internet.",
+
+    "features.CustomDesign": "Diseño Web Personalizado",
+    "features.CustomDesign-2":
+      "Diseñamos sitios web únicos en Honduras y Centroamérica que reflejan la identidad de tu marca. Utilizamos las últimas tendencias en diseño web para hacer que tu negocio destaque de la competencia.",
 
     //showcase
     "showcase.ContentSection": "Proyectos",
