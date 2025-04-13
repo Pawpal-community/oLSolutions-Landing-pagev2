@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://hon-tech.netlify.app/",
+  site: "https://hontechn.com/",
   integrations: [tailwind(), icon()],
   i18n: {
     defaultLocale: "en",
