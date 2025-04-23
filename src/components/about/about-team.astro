@@ -1,0 +1,61 @@
+<!-- ---
+import { Image } from "astro:assets";
+import ContentSection from "~/components/content-section.astro";
+import type { LanguageList } from "~/i18n/ui";
+import { useTranslations } from "~/i18n/utils";
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof LanguageList,
+);
+
+// Define our team members
+const teamMembers = [
+  {
+    name: translateLabels('about.team.member1.name'),
+    role: translateLabels('about.team.member1.role'),
+    bio: translateLabels('about.team.member1.bio'),
+    image: "/team/member1.jpg",
+  },
+  {
+    name: translateLabels('about.team.member2.name'),
+    role: translateLabels('about.team.member2.role'),
+    bio: translateLabels('about.team.member2.bio'),
+    image: "/team/member2.jpg",
+  },
+  {
+    name: translateLabels('about.team.member3.name'),
+    role: translateLabels('about.team.member3.role'),
+    bio: translateLabels('about.team.member3.bio'),
+    image: "/team/member3.jpg",
+  },
+];
+---
+
+<ContentSection title={translateLabels('about.team.title')} id="team">
+  <Fragment slot="lead">
+    {translateLabels('about.team.subtitle')}
+  </Fragment>
+  
+  <div class="grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {
+      teamMembers.map((member) => (
+        <div class="flex flex-col items-center gap-4 border border-default bg-offset p-6 rounded-lg transition-all duration-300 hover:shadow-lg">
+          <div class="size-32 overflow-hidden rounded-full">
+            <Image
+              src={member.image}
+              alt={member.name}
+              width={128}
+              height={128}
+              class="size-full object-cover"
+            />
+          </div>
+          <h3 class="text-center font-extrabold text-xl">{member.name}</h3>
+          <p class="text-center text-primary font-medium">{member.role}</p>
+          <p class="text-center text-offset text-sm">{member.bio}</p>
+        </div>
+      ))
+    }
+  </div>
+</ContentSection>  -->

@@ -1,22 +1,19 @@
 ---
 import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
-import Features from "~/components/features.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
-import Pricing from "~/components/pricing.astro";
-import Showcase from "~/components/showcase.astro";
-import Splash from "~/components/splash.astro";
+import AboutHero from "~/components/about/about-hero.astro";
+import AboutTeam from "~/components/about/about-team.astro";
+import AboutValues from "~/components/about/about-values.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
 const image = new URL("hontech-preview.png", site);
-const description =
-  "Design of custom websites and landing pages for businesses in the United States and across America.";
+const description = "Conoce más sobre Hontech - nuestra misión, valores y el equipo detrás de nuestros servicios de desarrollo web y software.";
 ---
 
 <!doctype html>
-<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+<html lang="es" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -24,27 +21,27 @@ const description =
     <meta name="generator" content={generator} />
 
     <!-- SEO: Title and Description -->
-    <title>Hontech - Website and Landing Page Development in United States and America</title>
+    <title>Sobre Nosotros - Hontech Desarrollo Web y Software</title>
     <meta name="description" content={description} />
-    <link rel="alternate" hreflang="en-US" href="https://hontechn.com/" />
-    <link rel="alternate" hreflang="es-HN" href="https://hontechn.com/es/" />
+    <link rel="alternate" hreflang="en-US" href="https://hontechn.com/about" />
+    <link rel="alternate" hreflang="es-HN" href="https://hontechn.com/es/about" />
 
     <!-- SEO: Keywords -->
-    <meta name="keywords" content="landing page development, website design, landing pages America, website United States, landing page USA" />
+    <meta name="keywords" content="sobre Hontech, equipo de desarrollo web, empresa de desarrollo de software, misión Hontech, valores Hontech" />
     <meta name="author" content="Luis Manzano" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Hontech - Websites and Landing Pages for United States and America" />
+    <meta property="og:title" content="Sobre Nosotros - Hontech Desarrollo Web y Software" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={site + 'es/about'} />
+    <meta property="og:locale" content="es_HN" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hontech - Websites and Landing Pages for United States and America" />
+    <meta name="twitter:title" content="Sobre Nosotros - Hontech Desarrollo Web y Software" />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
@@ -75,14 +72,11 @@ const description =
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
-    <Header />
-    <Splash />
+    <AboutHero />
     <div class="space-y-24 px-8 py-32">
-      <Compatibility />
-      <Features />
-      <Pricing />
-      <Showcase />
+      <AboutValues />
+      <AboutTeam />
     </div>
     <Footer />
   </body>
-</html>
+</html> 

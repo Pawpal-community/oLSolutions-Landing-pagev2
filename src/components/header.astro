@@ -25,9 +25,10 @@ const translateLabels = useTranslations(
 );
 
 const navItems: Array<NavItem> = [
-  { title: translateLabels('nav.services'), url: "#features" },
-  { title: translateLabels('nav.clients'), url: "#compatibility" },
-  { title: translateLabels('nav.showcase'), url: "#showcase" },
+  { title: translateLabels('nav.services'), url: `/${currentLang}/#features` },
+  { title: translateLabels('nav.benefits'), url: `/${currentLang}/#benefits` },
+  { title: translateLabels('nav.showcase'), url: `/${currentLang}/#showcase` },
+  { title: translateLabels('nav.about'), url: `/${currentLang}/about` },
 ];
 ---
 

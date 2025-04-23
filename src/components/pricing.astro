@@ -1,0 +1,97 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "~/components/content-section.astro";
+import type { LanguageList } from "~/i18n/ui";
+import { useTranslations } from "~/i18n/utils";
+import SendMessageBtn from "./shared/sendMessageBtn.astro";
+import type { PricingItem } from "~/types";
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof LanguageList,
+);
+
+// Define pricing tiers
+const pricingTiers: PricingItem[] = [
+  {
+    title: translateLabels('pricing.basic.title'),
+    price: translateLabels('pricing.basic.price'),
+    description: translateLabels('pricing.basic.description'),
+    features: [
+      translateLabels('pricing.basic.feature1'),
+      translateLabels('pricing.basic.feature2'),
+      translateLabels('pricing.basic.feature3'),
+      translateLabels('pricing.basic.feature4'),
+    ],
+    icon: "mdi:rocket-launch",
+    highlighted: false,
+  },
+  {
+    title: translateLabels('pricing.pro.title'),
+    price: translateLabels('pricing.pro.price'),
+    description: translateLabels('pricing.pro.description'),
+    features: [
+      translateLabels('pricing.pro.feature1'),
+      translateLabels('pricing.pro.feature2'),
+      translateLabels('pricing.pro.feature3'),
+      translateLabels('pricing.pro.feature4'),
+      translateLabels('pricing.pro.feature5'),
+    ],
+    icon: "mdi:star",
+    highlighted: true,
+  },
+  {
+    title: translateLabels('pricing.enterprise.title'),
+    price: translateLabels('pricing.enterprise.price'),
+    description: translateLabels('pricing.enterprise.description'),
+    features: [
+      translateLabels('pricing.enterprise.feature1'),
+      translateLabels('pricing.enterprise.feature2'),
+      translateLabels('pricing.enterprise.feature3'),
+      translateLabels('pricing.enterprise.feature4'),
+      translateLabels('pricing.enterprise.feature5'),
+      translateLabels('pricing.enterprise.feature6'),
+    ],
+    icon: "mdi:rocket",
+    highlighted: false,
+  },
+];
+---
+
+<ContentSection title={translateLabels('pricing.ContentSection')} id="pricing">
+  <Fragment slot="lead">
+    {translateLabels('pricing.Fragment')} <span class="text-primary">{translateLabels('pricing.FragmentHighlight')}</span>
+  </Fragment>
+  
+  <div class="grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+    {
+      pricingTiers.map((tier: PricingItem) => (
+        <div class={`flex flex-col items-center gap-6 border ${tier.highlighted ? 'border-primary' : 'border-default'} bg-offset p-6 rounded-lg transition-all duration-300 hover:shadow-lg ${tier.highlighted ? 'scale-105' : ''}`}>
+          {tier.highlighted && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-white">
+              {translateLabels('pricing.recommended')}
+            </div>
+          )}
+          <div class="size-16 rounded-full border-2 border-current p-3">
+            <Icon name={tier.icon} class="size-full" />
+          </div>
+          <h3 class="text-center font-extrabold text-xl">{tier.title}</h3>
+          <div class="text-center">
+            <span class="text-3xl font-bold">{tier.price}</span>
+          </div>
+          <p class="text-center text-offset text-sm">{tier.description}</p>
+          <ul class="flex flex-col gap-2 text-sm">
+            {tier.features.map((feature: string) => (
+              <li class="flex items-center gap-2">
+                <Icon name="mdi:check" class="size-5 text-primary" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <SendMessageBtn />
+        </div>
+      ))
+    }
+  </div>
+</ContentSection> 

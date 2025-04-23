@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import type { LanguageList } from "~/i18n/ui";
+import { useTranslations } from "~/i18n/utils";
+import Header from "../header.astro";
+
+const currentLang = Astro.currentLocale || "en";
+
+const translateLabels = useTranslations(
+  currentLang as keyof typeof LanguageList,
+);
+---
+
+<section class="relative h-[100dvh] bg-black flex items-center justify-center">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-10"></div>
+  <div class="absolute inset-0 bg-[url('/src/assets/about-bg.jpg')] bg-cover bg-center"></div>
+  
+  <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+    <h1 class="gradient-text text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+      {translateLabels('about.hero.title')}
+    </h1>
+    <p class="text-xl md:text-2xl text-offset max-w-2xl mx-auto">
+      {translateLabels('about.hero.subtitle')}
+    </p>
+  </div>
+  
+  <div class="absolute bottom-0 left-0 right-0 flex justify-center pb-8 z-20">
+    <a href="#about-content" class="text-white hover:text-primary transition-colors duration-300">
+      <Icon name="mdi:chevron-down" class="size-10 animate-bounce" />
+    </a>
+  </div>
+  <Header />
+</section>
+
+<section id="about-content" class="py-20 px-4 md:px-8">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="gradient-text text-3xl md:text-4xl font-extrabold tracking-tight mb-6">
+          {translateLabels('about.mission.title')}
+        </h2>
+        <p class="text-offset mb-6">
+          {translateLabels('about.mission.description')}
+        </p>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-start gap-3">
+            <div class="mt-1">
+              <Icon name="mdi:check-circle" class="size-6 text-primary" />
+            </div>
+            <p>{translateLabels('about.mission.point1')}</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="mt-1">
+              <Icon name="mdi:check-circle" class="size-6 text-primary" />
+            </div>
+            <p>{translateLabels('about.mission.point2')}</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="mt-1">
+              <Icon name="mdi:check-circle" class="size-6 text-primary" />
+            </div>
+            <p>{translateLabels('about.mission.point3')}</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-square rounded-lg overflow-hidden border-2 border-primary">
+          <Image 
+            src="/src/assets/moon.jpg" 
+            alt="Hontech mission" 
+            width={600} 
+            height={600} 
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-lg">
+          <p class="text-sm font-bold">{translateLabels('about.mission.stats')}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

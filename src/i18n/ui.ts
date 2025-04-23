@@ -12,8 +12,9 @@ export const labels = {
     "cta.viewProjects": "View Projects",
     // Nav
     "nav.services": "Services",
-    "nav.clients": "Clients",
+    "nav.benefits": "Benefits",
     "nav.showcase": "Projects",
+    "nav.about": "About",
 
     // Splash
     "splash.build": "At Hontech",
@@ -31,11 +32,14 @@ export const labels = {
     "compatibility.solutions-2": " landing pages",
     "compatibility.landing-page": " for your business",
     "compatibility.to-meet": " and its needs",
-    "compatibility.tailoredSoftwareSolutions": "No Monthly Fees: Lifetime Hosting Included",
-    "compatibility.ultraFastLandingPages": "Lightning-Fast Loading: More Sales, Less Bounce Rate",
+    "compatibility.tailoredSoftwareSolutions":
+      "No Monthly Fees: Lifetime Hosting Included",
+    "compatibility.ultraFastLandingPages":
+      "Lightning-Fast Loading: More Sales, Less Bounce Rate",
     "compatibility.seoOptimizedDesigns": "Designed to Rank on Google",
     "compatibility.expertTeamAndSupport": "Expert Support, Even After Launch",
-    "compatibility.innovativeDesign": "Unique Design That Reflects Your Business",
+    "compatibility.innovativeDesign":
+      "Unique Design That Reflects Your Business",
     "compatibility.keyBenefits": "Key Benefits",
     "compatibility.ourApproach": "How We Work With You",
     "compatibility.more": "and more",
@@ -85,6 +89,90 @@ export const labels = {
     "showcase.Custom": "Custom",
     "showcase.Software": "Software",
     "showcase.Featured": "Featured",
+
+    // Pricing
+    "pricing.ContentSection": "Pricing Plans",
+    "pricing.Fragment": "Choose the perfect plan for your business",
+    "pricing.FragmentHighlight": "needs",
+    "pricing.recommended": "Recommended",
+
+    // Basic Plan
+    "pricing.basic.title": "Basic",
+    "pricing.basic.price": "$499",
+    "pricing.basic.description": "Perfect for small businesses and startups",
+    "pricing.basic.feature1": "5-page website or landing page",
+    "pricing.basic.feature2": "Mobile responsive design",
+    "pricing.basic.feature3": "Basic SEO optimization",
+    "pricing.basic.feature4": "1 month of support",
+
+    // Pro Plan
+    "pricing.pro.title": "Professional",
+    "pricing.pro.price": "$999",
+    "pricing.pro.description": "Ideal for growing businesses",
+    "pricing.pro.feature1": "10-page website or landing page",
+    "pricing.pro.feature2": "Advanced responsive design",
+    "pricing.pro.feature3": "Advanced SEO optimization",
+    "pricing.pro.feature4": "Contact form integration",
+    "pricing.pro.feature5": "3 months of support",
+
+    // Enterprise Plan
+    "pricing.enterprise.title": "Enterprise",
+    "pricing.enterprise.price": "Custom",
+    "pricing.enterprise.description": "For large businesses with complex needs",
+    "pricing.enterprise.feature1": "Unlimited pages",
+    "pricing.enterprise.feature2": "Custom functionality",
+    "pricing.enterprise.feature3": "Premium SEO package",
+    "pricing.enterprise.feature4": "E-commerce integration",
+    "pricing.enterprise.feature5": "Custom integrations",
+    "pricing.enterprise.feature6": "6 months of priority support",
+
+    // About Hero
+    "about.hero.title": "About Hontech",
+    "about.hero.subtitle":
+      "We're a team of passionate developers and designers dedicated to creating exceptional digital experiences",
+
+    // About Mission
+    "about.mission.title": "Our Mission",
+    "about.mission.description":
+      "At Hontech, we're committed to delivering innovative solutions that help businesses thrive in the digital world.",
+    "about.mission.point1":
+      "Create high-quality, user-friendly websites and applications",
+    "about.mission.point2": "Provide exceptional customer service and support",
+    "about.mission.point3":
+      "Stay at the forefront of technology and design trends",
+    "about.mission.stats": "100+ Projects Completed",
+
+    // About Values
+    "about.values.title": "Our Values",
+    "about.values.subtitle": "The principles that guide everything we do",
+    "about.values.innovation.title": "Innovation",
+    "about.values.innovation.description":
+      "We constantly explore new technologies and creative approaches to solve problems.",
+    "about.values.quality.title": "Quality",
+    "about.values.quality.description":
+      "We're committed to delivering excellence in every project, from concept to completion.",
+    "about.values.collaboration.title": "Collaboration",
+    "about.values.collaboration.description":
+      "We work closely with our clients to ensure their vision becomes reality.",
+    "about.values.integrity.title": "Integrity",
+    "about.values.integrity.description":
+      "We operate with transparency and honesty in all our business dealings.",
+
+    // About Team
+    "about.team.title": "Our Team",
+    "about.team.subtitle": "Meet the talented individuals behind our success",
+    "about.team.member1.name": "John Doe",
+    "about.team.member1.role": "Founder & CEO",
+    "about.team.member1.bio":
+      "With over 15 years of experience in web development, John leads our team with vision and expertise.",
+    "about.team.member2.name": "Jane Smith",
+    "about.team.member2.role": "Lead Designer",
+    "about.team.member2.bio":
+      "Jane brings creativity and precision to every project, ensuring our designs are both beautiful and functional.",
+    "about.team.member3.name": "Mike Johnson",
+    "about.team.member3.role": "Senior Developer",
+    "about.team.member3.bio":
+      "Mike's technical expertise and problem-solving skills help us deliver robust and scalable solutions.",
   },
   es: {
     //whats number
@@ -94,8 +182,9 @@ export const labels = {
     "cta.viewProjects": "Ver Proyectos",
     // Nav
     "nav.services": "Servicios",
-    "nav.clients": "Clientes",
+    "nav.benefits": "Beneficios",
     "nav.showcase": "Proyectos",
+    "nav.about": "Sobre nosotros",
 
     // Splash
     "splash.build": "En Hontech",
@@ -113,10 +202,14 @@ export const labels = {
     "compatibility.solutions-2": "landing pages",
     "compatibility.landing-page": "para tu negocio",
     "compatibility.to-meet": "y sus necesidades",
-    "compatibility.tailoredSoftwareSolutions": "Sin pagos mensuales: hosting de por vida incluido",
-    "compatibility.ultraFastLandingPages": "Tu web carga en segundos: más ventas, menos rebote",
-    "compatibility.seoOptimizedDesigns": "Diseño pensado para aparecer en Google",
-    "compatibility.expertTeamAndSupport": "Acompañamiento experto, incluso después de publicar",
+    "compatibility.tailoredSoftwareSolutions":
+      "Sin pagos mensuales: hosting de por vida incluido",
+    "compatibility.ultraFastLandingPages":
+      "Tu web carga en segundos: más ventas, menos rebote",
+    "compatibility.seoOptimizedDesigns":
+      "Diseño pensado para aparecer en Google",
+    "compatibility.expertTeamAndSupport":
+      "Acompañamiento experto, incluso después de publicar",
     "compatibility.innovativeDesign": "Diseño único que refleja tu negocio",
     "compatibility.keyBenefits": "Beneficios clave",
     "compatibility.ourApproach": "Cómo trabajamos contigo",
@@ -167,5 +260,100 @@ export const labels = {
     "showcase.Custom": "Software",
     "showcase.Software": "Personalizado",
     "showcase.Featured": "Destacado",
+
+    // Pricing
+    "pricing.ContentSection": "Planes de Precios",
+    "pricing.Fragment": "Elige el plan perfecto para las necesidades de tu",
+    "pricing.FragmentHighlight": " negocio",
+    "pricing.recommended": "Recomendado",
+
+    // Basic Plan
+    "pricing.basic.title": "Básico",
+    "pricing.basic.price": "7,500 lempiras",
+    "pricing.basic.description":
+      "Perfecto para pequeñas empresas y emprendedores",
+    "pricing.basic.feature1": "Sitio web o landing page basico de 7 páginas",
+    "pricing.basic.feature2": "Diseño responsive para móviles",
+    "pricing.basic.feature3": "Optimización SEO básica",
+    "pricing.basic.feature4": "1 año de hosting y dominio incluido",
+
+    // Pro Plan
+    "pricing.pro.title": "Profesional",
+    "pricing.pro.price": "15,600 lempiras",
+    "pricing.pro.description": "Ideal para empresas en crecimiento",
+    "pricing.pro.feature1":
+      "Sitio web o landing page de 12 paginas y diferentes secciones",
+    "pricing.pro.feature2": "Diseño responsive avanzado",
+    "pricing.pro.feature3": "Optimización SEO avanzada",
+    "pricing.pro.feature4": "Integración de formulario de contacto",
+    "pricing.pro.feature5": "1 año de hosting y dominio incluido",
+    "pricing.pro.feature6": "Animaciones y efectos personalizados",
+
+    // Enterprise Plan
+    "pricing.enterprise.title": "Empresarial",
+    "pricing.enterprise.price": "Personalizado",
+    "pricing.enterprise.description":
+      "Para grandes empresas con necesidades complejas",
+    "pricing.enterprise.feature1": "Páginas ilimitadas",
+    "pricing.enterprise.feature2": "Funcionalidad personalizada",
+    "pricing.enterprise.feature3": "Paquete SEO premium",
+    "pricing.enterprise.feature4": "Integración de comercio electrónico",
+    "pricing.enterprise.feature5": "Integraciones personalizadas",
+    "pricing.enterprise.feature6": "6 meses de soporte prioritario",
+
+    // About Hero
+    "about.hero.title":
+      "Hontech: Expertos en Diseño de Landing Pages y Páginas Web en Honduras",
+    "about.hero.subtitle":
+      "Somos un equipo apasionado en todo Honduras, creando landing pages y sitios web personalizados que impulsan negocios en Centroamérica y Estados Unidos.",
+
+    // About Mission
+    "about.mission.title":
+      "Nuestra Misión: Potenciar Negocios con Landing Pages en Honduras",
+    "about.mission.description":
+      "En Hontech, desde Tegucigalpa, diseñamos landing pages y sitios web rápidos que ayudan a negocios en Centroamérica y Estados Unidos a destacar en Google con soluciones innovadoras.",
+    "about.mission.point1":
+      "Crear landing pages optimizadas para SEO y conversiones en Honduras.",
+    "about.mission.point2":
+      "Ofrecer soporte personalizado desde San Pedro Sula y Tegucigalpa.",
+    "about.mission.point3":
+      "Mantenernos a la vanguardia en diseño web y tecnología para Centroamérica.",
+    "about.mission.stats":
+      "Más de 100 landing pages y sitios web diseñados en Honduras y Estados Unidos",
+
+    // About Values
+    "about.values.title":
+      "Nuestros Valores para el Diseño de Landing Pages en Honduras",
+    "about.values.subtitle":
+      "Los principios que guían cada landing page y sitio web que creamos en Centroamérica.",
+    "about.values.innovation.title": "Innovación",
+    "about.values.innovation.description":
+      "Exploramos tecnologías avanzadas para crear landing pages rápidas y optimizadas en Honduras.",
+    "about.values.quality.title": "Calidad",
+    "about.values.quality.description":
+      "Entregamos sitios web y landing pages en Tegucigalpa con excelencia, desde el diseño hasta el SEO.",
+    "about.values.collaboration.title": "Colaboración",
+    "about.values.collaboration.description":
+      "Trabajamos contigo para transformar tu visión en una landing page que destaque en Centroamérica.",
+    "about.values.integrity.title": "Integridad",
+    "about.values.integrity.description":
+      "Operamos con transparencia, ofreciendo soporte continuo para negocios en Honduras y Estados Unidos.",
+
+    // About Team
+    "about.team.title": "Nuestro Equipo",
+    "about.team.subtitle":
+      "Conoce a los talentosos individuos detrás de nuestro éxito",
+    "about.team.member1.name": "John Doe",
+    "about.team.member1.role": "Fundador y CEO",
+    "about.team.member1.bio":
+      "Con más de 15 años de experiencia en desarrollo web, John lidera nuestro equipo con visión y experiencia.",
+    "about.team.member2.name": "Jane Smith",
+    "about.team.member2.role": "Diseñadora Principal",
+    "about.team.member2.bio":
+      "Jane aporta creatividad y precisión a cada proyecto, asegurando que nuestros diseños sean tanto hermosos como funcionales.",
+    "about.team.member3.name": "Mike Johnson",
+    "about.team.member3.role": "Desarrollador Senior",
+    "about.team.member3.bio":
+      "La experiencia técnica y habilidades para resolver problemas de Mike nos ayudan a ofrecer soluciones robustas y escalables.",
   },
 };

@@ -20,3 +20,12 @@ export interface NavItem {
   title: string;
   url: string;
 }
+
+export interface PricingItem {
+  title: string;
+  price: string;
+  description: string;
+  features: string[];
+  icon: string;
+  highlighted: boolean;
+}
