@@ -95,14 +95,14 @@ export const labels = {
     // Pricing
     "pricing.ContentSection": "Pricing Plans",
     "pricing.Fragment": "Choose the perfect plan for your business",
-    "pricing.FragmentHighlight": "needs",
+    "pricing.FragmentHighlight": " needs",
     "pricing.recommended": "Recommended",
 
     // Basic Plan
     "pricing.basic.title": "Basic",
     "pricing.basic.price": "$499",
     "pricing.basic.description": "Perfect for small businesses and startups",
-    "pricing.basic.feature1": "5-page website or landing page",
+    "pricing.basic.feature1": "7-page website or landing page",
     "pricing.basic.feature2": "Mobile responsive design",
     "pricing.basic.feature3": "Basic SEO optimization",
     "pricing.basic.feature4": "1 month of support",
@@ -111,7 +111,7 @@ export const labels = {
     "pricing.pro.title": "Professional",
     "pricing.pro.price": "$999",
     "pricing.pro.description": "Ideal for growing businesses",
-    "pricing.pro.feature1": "10-page website or landing page",
+    "pricing.pro.feature1": "12-page website or landing page",
     "pricing.pro.feature2": "Advanced responsive design",
     "pricing.pro.feature3": "Advanced SEO optimization",
     "pricing.pro.feature4": "Contact form integration",
