@@ -135,17 +135,17 @@ export const labels = {
 
     // About Mission
     "about.mission.title":
-      "Our Mission: Empowering Businesses with Landing Pages in Honduras",
+      "Our Mission: Empowering Businesses with Landing Pages in United States and Central America",
     "about.mission.description":
-      "At Hontech, from Tegucigalpa, we design fast landing pages and websites that help businesses in Central America and the United States stand out on Google with innovative solutions.",
+      "At Hontech, from the US, we design fast landing pages and websites that help businesses in Central America and the United States stand out on Google with innovative solutions.",
     "about.mission.point1":
-      "Create SEO and conversion optimized landing pages in Honduras.",
+      "Create SEO and conversion optimized landing pages in United States.",
     "about.mission.point2":
-      "Offer personalized support from San Pedro Sula and Tegucigalpa.",
+      "Offer personalized support from the US.",
     "about.mission.point3":
       "Stay at the forefront of web design and technology for Central America.",
     "about.mission.stats":
-      "Over 100 landing pages and websites designed in Honduras and the United States",
+      "Over 100 landing pages and websites designed in Central America and the United States",
 
     // About Values
     "about.values.title":
@@ -154,16 +154,16 @@ export const labels = {
       "The principles that guide every landing page and website we create in Central America.",
     "about.values.innovation.title": "Innovation",
     "about.values.innovation.description":
-      "We explore advanced technologies to create fast and optimized landing pages in Honduras.",
+      "We explore advanced technologies to create fast and optimized landing pages in Central America and the United States.",
     "about.values.quality.title": "Quality",
     "about.values.quality.description":
-      "We deliver websites and landing pages in Tegucigalpa with excellence, from design to SEO.",
+      "We deliver websites and landing pages in United States and Central America with excellence, from design to SEO.",
     "about.values.collaboration.title": "Collaboration",
     "about.values.collaboration.description":
       "We work with you to transform your vision into a landing page that stands out in Central America.",
     "about.values.integrity.title": "Integrity",
     "about.values.integrity.description":
-      "We operate with transparency, offering continuous support for businesses in Honduras and the United States.",
+      "We operate with transparency, offering continuous support for businesses in Central America and the United States.",
 
     // About Team
     "about.team.title": "Our Team",
