@@ -3,6 +3,8 @@ import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
 import type { LanguageList } from "~/i18n/ui";
 import { useTranslations } from "~/i18n/utils";
+import BackBtn from "~/components/shared/backBtn.astro";
+import SendMessageBtn from "../shared/sendMessageBtn.astro";
 
 const currentLang = Astro.currentLocale || "en";
 
@@ -52,5 +54,9 @@ const values = [
         </div>
       ))
     }
+  </div>
+  <div class="flex justify-center gap-4">
+    <BackBtn />
+    <SendMessageBtn />
   </div>
 </ContentSection> 

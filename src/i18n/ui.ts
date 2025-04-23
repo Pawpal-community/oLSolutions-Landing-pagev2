@@ -10,7 +10,9 @@ export const labels = {
     //cta buttons
     "cta.sendMessage": "Contact us",
     "cta.viewProjects": "View Projects",
+    "cta.back": "Back to Home",
     // Nav
+    "nav.home": "Home",
     "nav.services": "Services",
     "nav.benefits": "Benefits",
     "nav.showcase": "Projects",
@@ -127,36 +129,41 @@ export const labels = {
     "pricing.enterprise.feature6": "6 months of priority support",
 
     // About Hero
-    "about.hero.title": "About Hontech",
+    "about.hero.title": "Hontech: Experts in Landing Page and Website Design in Honduras",
     "about.hero.subtitle":
-      "We're a team of passionate developers and designers dedicated to creating exceptional digital experiences",
+      "We are a passionate team throughout Honduras, creating custom landing pages and websites that drive businesses in Central America and the United States",
 
     // About Mission
-    "about.mission.title": "Our Mission",
+    "about.mission.title":
+      "Our Mission: Empowering Businesses with Landing Pages in Honduras",
     "about.mission.description":
-      "At Hontech, we're committed to delivering innovative solutions that help businesses thrive in the digital world.",
+      "At Hontech, from Tegucigalpa, we design fast landing pages and websites that help businesses in Central America and the United States stand out on Google with innovative solutions.",
     "about.mission.point1":
-      "Create high-quality, user-friendly websites and applications",
-    "about.mission.point2": "Provide exceptional customer service and support",
+      "Create SEO and conversion optimized landing pages in Honduras.",
+    "about.mission.point2":
+      "Offer personalized support from San Pedro Sula and Tegucigalpa.",
     "about.mission.point3":
-      "Stay at the forefront of technology and design trends",
-    "about.mission.stats": "100+ Projects Completed",
+      "Stay at the forefront of web design and technology for Central America.",
+    "about.mission.stats":
+      "Over 100 landing pages and websites designed in Honduras and the United States",
 
     // About Values
-    "about.values.title": "Our Values",
-    "about.values.subtitle": "The principles that guide everything we do",
+    "about.values.title":
+      "Our Values for Landing Page Design in Honduras",
+    "about.values.subtitle":
+      "The principles that guide every landing page and website we create in Central America.",
     "about.values.innovation.title": "Innovation",
     "about.values.innovation.description":
-      "We constantly explore new technologies and creative approaches to solve problems.",
+      "We explore advanced technologies to create fast and optimized landing pages in Honduras.",
     "about.values.quality.title": "Quality",
     "about.values.quality.description":
-      "We're committed to delivering excellence in every project, from concept to completion.",
+      "We deliver websites and landing pages in Tegucigalpa with excellence, from design to SEO.",
     "about.values.collaboration.title": "Collaboration",
     "about.values.collaboration.description":
-      "We work closely with our clients to ensure their vision becomes reality.",
+      "We work with you to transform your vision into a landing page that stands out in Central America.",
     "about.values.integrity.title": "Integrity",
     "about.values.integrity.description":
-      "We operate with transparency and honesty in all our business dealings.",
+      "We operate with transparency, offering continuous support for businesses in Honduras and the United States.",
 
     // About Team
     "about.team.title": "Our Team",
@@ -180,7 +187,9 @@ export const labels = {
     //cta buttons
     "cta.sendMessage": "Contactanos",
     "cta.viewProjects": "Ver Proyectos",
+    "cta.back": "Volver a Inicio",
     // Nav
+    "nav.home": "Inicio",
     "nav.services": "Servicios",
     "nav.benefits": "Beneficios",
     "nav.showcase": "Proyectos",

@@ -10,14 +10,23 @@ const currentPath = Astro.url.pathname;
 
 // path to redirect to the same page in the target language
 function getLocalizedPath(targetLang: string) {
+  // For English, always return the main route '/'
+  if (targetLang === 'en') {
+    return '/';
+  }
+  
+  // For Spanish, add the language prefix to the current path
   const segments = currentPath.split('/').filter(Boolean);
   let pagePath;
+  
+  // If the first segment is a language code (es), remove it to get the base path
   if (segments.length > 0 && segments[0] === 'es') {
     pagePath = '/' + segments.slice(1).join('/');
   } else {
     pagePath = currentPath;
   }
-  return targetLang === 'en' ? pagePath : `/${targetLang}${pagePath}`;
+  
+  return `/${targetLang}${pagePath}`;
 }
 
 const translateLabels = useTranslations(
@@ -25,10 +34,11 @@ const translateLabels = useTranslations(
 );
 
 const navItems: Array<NavItem> = [
-  { title: translateLabels('nav.services'), url: `/${currentLang}/#features` },
-  { title: translateLabels('nav.benefits'), url: `/${currentLang}/#benefits` },
-  { title: translateLabels('nav.showcase'), url: `/${currentLang}/#showcase` },
-  { title: translateLabels('nav.about'), url: `/${currentLang}/about` },
+  { title: translateLabels('nav.home'), url: currentLang === 'en' ? '/' : `/${currentLang}` },
+  { title: translateLabels('nav.services'), url: currentLang === 'en' ? '/#features' : `/${currentLang}/#features` },
+  { title: translateLabels('nav.benefits'), url: currentLang === 'en' ? '/#benefits' : `/${currentLang}/#benefits` },
+  { title: translateLabels('nav.showcase'), url: currentLang === 'en' ? '/#showcase' : `/${currentLang}/#showcase` },
+  { title: translateLabels('nav.about'), url: currentLang === 'en' ? '/about' : `/${currentLang}/about` },
 ];
 ---
 
