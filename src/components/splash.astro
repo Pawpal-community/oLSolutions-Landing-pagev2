@@ -49,7 +49,7 @@ const translateLabels = useTranslations(
       </div>
     </h2>
     <div
-      id="spaceship"
+      id="astronaut"
       class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
     >
       <Image
@@ -58,7 +58,7 @@ const translateLabels = useTranslations(
         widths={widths}
         sizes={sizes}
         loading="eager"
-        alt="A spaceship flying through space"
+        alt="A floating astronaut in a space suit"
       />
     </div>
   </div>
@@ -73,58 +73,23 @@ const translateLabels = useTranslations(
 </noscript>
 
 <style>
-  @keyframes flyIn {
+  @keyframes float {
     0% {
-      transform: translate3d(100vw, 0, 0);
-      opacity: 0;
-    }
-    
-    60% {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
-    }
-    
-    80% {
-      transform: translate3d(-10px, 10px, 0);
-    }
-    
-    100% {
       transform: translate3d(0, 0, 0);
     }
-  }
-  
-  @keyframes hover {
-    0% {
-      transform: translate3d(0, 0, 0) rotate(0deg);
-    }
-    
-    25% {
-      transform: translate3d(-5px, 10px, 0) rotate(-1deg);
-    }
-    
-    50% {
-      transform: translate3d(0, 20px, 0) rotate(0deg);
-    }
-    
-    75% {
-      transform: translate3d(5px, 10px, 0) rotate(1deg);
-    }
-    
+
     100% {
-      transform: translate3d(0, 0, 0) rotate(0deg);
+      transform: translate3d(0, 50px, 0);
     }
   }
 
-  #spaceship {
-    animation: flyIn 1.5s ease-out forwards, hover 6s ease-in-out infinite 1.5s;
-    will-change: transform;
-    transform: translate3d(100vw, 0, 0);
+  #astronaut {
+    animation: float linear 2.5s infinite alternate;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    #spaceship {
-      animation: none;
-      transform: translate3d(0, 0, 0);
+    #astronaut {
+      @apply animate-none;
     }
 
     :global(#starfield) {
