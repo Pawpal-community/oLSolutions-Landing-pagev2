@@ -1,7 +1,7 @@
 {
-  "title": "Designcember",
-  "image": "/src/content/showcase/_images/designcember.png",
-  "url": "https://designcember.com/",
+  "title": "Mi Rinconcito",
+  "image": "/src/content/showcase/_images/mi-rinconcito.png",
+  "url": "https://mi-rinconcito.netlify.app/en/",
   "featured": 4,
   "type": "landingpage"
 }

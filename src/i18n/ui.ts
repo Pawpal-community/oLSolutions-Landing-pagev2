@@ -278,7 +278,7 @@ export const labels = {
 
     // Basic Plan
     "pricing.basic.title": "Básico",
-    "pricing.basic.price": "7,500 lempiras",
+    "pricing.basic.price": "11,500 lempiras",
     "pricing.basic.description":
       "Perfecto para pequeñas empresas y emprendedores",
     "pricing.basic.feature1": "Sitio web o landing page basico de 7 páginas",
@@ -288,7 +288,7 @@ export const labels = {
 
     // Pro Plan
     "pricing.pro.title": "Profesional",
-    "pricing.pro.price": "15,600 lempiras",
+    "pricing.pro.price": "17,600 lempiras",
     "pricing.pro.description": "Ideal para empresas en crecimiento",
     "pricing.pro.feature1":
       "Sitio web o landing page de 12 paginas y diferentes secciones",
